@@ -539,12 +539,12 @@ public class Bluetooth {
         // Get the device MAC address
         String address = null;
         BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
-        for(BluetoothDevice d: adapter.getBondedDevices()){
-            if (d.getName().equals(deviceName)) address = d.getAddress();
-        }
+//        for(BluetoothDevice d: adapter.getBondedDevices()){
+//            if (d.getName().equals(deviceName)) address = d.getAddress();
+//        }
 
         try {
-            BluetoothDevice device = adapter.getRemoteDevice(address); // Get the BluetoothDevice object
+            BluetoothDevice device = adapter.getRemoteDevice("98:D3:31:FD:2A:4C"); // Get the BluetoothDevice object
             this.connect(device); // Attempt to connect to the device
         } catch (Exception e){
             Log.e("Unable to connect to device address "+ address,e.getMessage());
